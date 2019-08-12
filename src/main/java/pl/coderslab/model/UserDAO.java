@@ -1,8 +1,5 @@
 package pl.coderslab.model;
 
-import pl.joanna026.progschool.model.User;
-import pl.joanna026.progschool.util.DBUtil;
-
 import java.sql.*;
 import java.util.Arrays;
 
@@ -47,7 +44,7 @@ public class UserDAO {
 
     public User read(int id) {
 
-        try (Connection conn = DbUtil.connect()) {
+        try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(READ_USER_QUERY);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -68,7 +65,7 @@ public class UserDAO {
     }
 
     public void update(User user) {
-        try (Connection conn = DbUtil.connect()) {
+        try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_USER_QUERY);
             statement.setString(1, user.getEmail());
             statement.setString(2, user.getUsername());
@@ -84,7 +81,7 @@ public class UserDAO {
     }
 
     public void delete(int id) {
-        try (Connection conn = DbUtil.connect()) {
+        try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(DELETE_USER_QUERY);
             statement.setInt(1, id);
             statement.executeUpdate();
@@ -94,7 +91,7 @@ public class UserDAO {
     }
 
     public User[] findAll() {
-        try (Connection conn = DbUtil.connect()) {
+        try (Connection conn = DbUtil.getConnection()) {
             User[] users = new User[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_USERS_QUERY);
             ResultSet resultSet = statement.executeQuery();
@@ -123,7 +120,7 @@ public class UserDAO {
     }
 
     public User[] findAllByGroup(int group_id){
-        try (Connection conn = DbUtil.connect()) {
+        try (Connection conn = DbUtil.getConnection()) {
             User[] users = new User[0];
             PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_GROUP_QUERY);
             statement.setInt(1,group_id);

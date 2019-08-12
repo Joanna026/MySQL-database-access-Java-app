@@ -1,4 +1,7 @@
-package pl.coderslab.model;
+package pl.coderslab.controller;
+
+import pl.coderslab.model.Solution;
+import pl.coderslab.model.SolutionDAO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +17,11 @@ public class Homepage extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            Solution solution = new Solution();
+       int limit =Integer.parseInt(getServletContext().getInitParameter("numberSolutions"));
+        SolutionDAO solutionDAO = new SolutionDAO();
+        String[][] recentSolutions = solutionDAO.findRecent(limit);
+        request.setAttribute("solutions", recentSolutions);
+
+        getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
     }
 }

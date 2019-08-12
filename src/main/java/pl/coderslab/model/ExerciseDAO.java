@@ -1,8 +1,5 @@
 package pl.coderslab.model;
 
-import pl.joanna026.progschool.model.Exercise;
-import pl.joanna026.progschool.util.DBUtil;
-
 import java.sql.*;
 import java.util.Arrays;
 

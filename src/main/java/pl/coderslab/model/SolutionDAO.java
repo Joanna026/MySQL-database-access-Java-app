@@ -1,8 +1,5 @@
 package pl.coderslab.model;
 
-import pl.joanna026.progschool.model.Solution;
-import pl.joanna026.progschool.util.DBUtil;
-
 import java.sql.*;
 import java.util.Arrays;
 
@@ -14,17 +11,20 @@ public class SolutionDAO {
             "UPDATE solution SET created=?, updated=?, description=?, exercise_id=?, users_id=? WHERE id=?";
     private static final String DELETE_SOLUTION_QUERY = "DELETE FROM solution WHERE id=?";
     private static final String FIND_ALL_SOLUTION_QUERY = "SELECT * FROM solution";
-    private static final String FIND_ALL_BY_USER_ID_QUERY= "SELECT * FROM solution WHERE users_id=?";
-    private static final String FIND_ALL_BY_EXERCISE_ID_QUERY= "SELECT * FROM solution WHERE exercise_id=?";
-    private static final String FIND_RECENT="SELECT * FROM solution ORDER BY created LIMIT ?";
+    private static final String FIND_ALL_BY_USER_ID_QUERY = "SELECT * FROM solution WHERE users_id=?";
+    private static final String FIND_ALL_BY_EXERCISE_ID_QUERY = "SELECT * FROM solution WHERE exercise_id=?";
+    private static final String FIND_RECENT = "SELECT e.title, u.username, s.created, s.id FROM solution s\n" +
+            "    JOIN exercise e \n" +
+            "    ON s.exercise_id = e.id\n" +
+            "JOIN users u on s.users_id = u.id ORDER BY created LIMIT ?";
 
     public Solution create(Solution solution) {
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(CREATE_SOLUTION_QUERY, Statement.RETURN_GENERATED_KEYS);
 
             //Ustawienie parametrów zapytania (wartości do wstawienia)
-            statement.setString(1, solution.getCreated());
-            statement.setString(2, solution.getUpdated());
+            statement.setTimestamp(1, solution.getCreated());
+            statement.setTimestamp(2, solution.getUpdated());
             statement.setString(3, solution.getDescription());
             statement.setInt(4, solution.getExercise_id());
             statement.setInt(5, solution.getUsers_id());
@@ -55,11 +55,11 @@ public class SolutionDAO {
             if (resultSet.next()) {
                 Solution solution = new Solution();
                 solution.setId(resultSet.getInt("id"));
-                solution.setCreated(resultSet.getString("created"));
-                solution.setUpdated(resultSet.getString("updated"));
+                solution.setCreated(resultSet.getTimestamp("created"));
+                solution.setUpdated(resultSet.getTimestamp("updated"));
                 solution.setDescription(resultSet.getString("description"));
-                solution.setExercise_id(resultSet.getInt("exercise id"));
-                solution.setUsers_id(resultSet.getInt("users id"));
+                solution.setExercise_id(resultSet.getInt("exercise_id"));
+                solution.setUsers_id(resultSet.getInt("users_id"));
                 return solution;
             }
         } catch (SQLException e) {
@@ -72,8 +72,8 @@ public class SolutionDAO {
     public void update(Solution solution) {
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_SOLUTION_QUERY);
-            statement.setString(1, solution.getCreated());
-            statement.setString(2, solution.getUpdated());
+            statement.setTimestamp(1, solution.getCreated());
+            statement.setTimestamp(2, solution.getUpdated());
             statement.setString(3, solution.getDescription());
             statement.setInt(4, solution.getExercise_id());
             statement.setInt(5, solution.getUsers_id());
@@ -104,8 +104,8 @@ public class SolutionDAO {
             while (resultSet.next()) {
                 Solution solution = new Solution();
                 solution.setId(resultSet.getInt("id"));
-                solution.setCreated(resultSet.getString("created"));
-                solution.setUpdated(resultSet.getString("updated"));
+                solution.setCreated(resultSet.getTimestamp("created"));
+                solution.setUpdated(resultSet.getTimestamp("updated"));
                 solution.setDescription(resultSet.getString("description"));
                 solution.setExercise_id(resultSet.getInt("exercise id"));
                 solution.setUsers_id(resultSet.getInt("users id"));
@@ -128,41 +128,17 @@ public class SolutionDAO {
     }
 
 
-    public Solution[] findAllByUserId(int users_id){
-            try (Connection conn = DbUtil.getConnection()) {
-                Solution[] solutions = new Solution[0];
-                PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_USER_ID_QUERY);
-                statement.setInt(1, users_id);
-                ResultSet resultSet = statement.executeQuery();
-                while (resultSet.next()) {
-                    Solution solution = new Solution();
-                    solution.setId(resultSet.getInt("id"));
-                    solution.setCreated(resultSet.getString("created"));
-                    solution.setUpdated(resultSet.getString("updated"));
-                    solution.setDescription(resultSet.getString("description"));
-                    solution.setExercise_id(resultSet.getInt("exercise id"));
-                    solution.setUsers_id(resultSet.getInt("users id"));
-                    solutions = addToArray(solution, solutions);
-                }
-                return solutions;
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return null;
-            }
-    }
-
-
-    public Solution[] findAllByExerciseId(int exercise_id){
+    public Solution[] findAllByUserId(int users_id) {
         try (Connection conn = DbUtil.getConnection()) {
             Solution[] solutions = new Solution[0];
-            PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_EXERCISE_ID_QUERY);
-            statement.setInt(1, exercise_id);
+            PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_USER_ID_QUERY);
+            statement.setInt(1, users_id);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Solution solution = new Solution();
                 solution.setId(resultSet.getInt("id"));
-                solution.setCreated(resultSet.getString("created"));
-                solution.setUpdated(resultSet.getString("updated"));
+                solution.setCreated(resultSet.getTimestamp("created"));
+                solution.setUpdated(resultSet.getTimestamp("updated"));
                 solution.setDescription(resultSet.getString("description"));
                 solution.setExercise_id(resultSet.getInt("exercise id"));
                 solution.setUsers_id(resultSet.getInt("users id"));
@@ -175,24 +151,51 @@ public class SolutionDAO {
         }
     }
 
-    public Solution[] findRecent(int limit){
-        try (Connection conn = DbUtil.getConnection()){
+
+    public Solution[] findAllByExerciseId(int exercise_id) {
+        try (Connection conn = DbUtil.getConnection()) {
             Solution[] solutions = new Solution[0];
-            PreparedStatement statement = conn.prepareStatement(FIND_RECENT);
-            statement.setInt(1, limit);
+            PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_EXERCISE_ID_QUERY);
+            statement.setInt(1, exercise_id);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 Solution solution = new Solution();
                 solution.setId(resultSet.getInt("id"));
-                solution.setCreated(resultSet.getString("created"));
-                solution.setUpdated(resultSet.getString("updated"));
+                solution.setCreated(resultSet.getTimestamp("created"));
+                solution.setUpdated(resultSet.getTimestamp("updated"));
                 solution.setDescription(resultSet.getString("description"));
                 solution.setExercise_id(resultSet.getInt("exercise id"));
                 solution.setUsers_id(resultSet.getInt("users id"));
                 solutions = addToArray(solution, solutions);
             }
             return solutions;
-        } catch (SQLException e){
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String[][] findRecent(int limit) {
+        try (Connection conn = DbUtil.getConnection()) {
+            Solution[] solutions = new Solution[0];
+            PreparedStatement statement = conn.prepareStatement(FIND_RECENT);
+            statement.setInt(1, limit);
+            ResultSet resultSet = statement.executeQuery();
+
+            String[][] resultTab = new String[limit][4];
+            int i = 0;
+            while (resultSet.next()) {
+                resultTab[i][0] = resultSet.getString("e.title");
+                resultTab[i][1] = resultSet.getString("u.username");
+                resultTab[i][2] = resultSet.getString("s.created");
+                resultTab[i][3] = resultSet.getString("s.id");
+                i++;
+            }
+            if (i < 5){
+                resultTab=Arrays.copyOf(resultTab, i);
+            }
+            return resultTab;
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
