@@ -1,7 +1,7 @@
 package pl.coderslab.model;
 
 import java.sql.*;
-import java.util.Arrays;
+import java.util.*;
 
 public class SolutionDAO {
     private static final String CREATE_SOLUTION_QUERY =
@@ -13,10 +13,13 @@ public class SolutionDAO {
     private static final String FIND_ALL_SOLUTION_QUERY = "SELECT * FROM solution";
     private static final String FIND_ALL_BY_USER_ID_QUERY = "SELECT * FROM solution WHERE users_id=?";
     private static final String FIND_ALL_BY_EXERCISE_ID_QUERY = "SELECT * FROM solution WHERE exercise_id=?";
-    private static final String FIND_RECENT = "SELECT e.title, u.username, s.created, s.id FROM solution s\n" +
+    private static final String FIND_RECENT_QUERY = "SELECT e.title, u.username, s.created, s.id FROM solution s\n" +
             "    JOIN exercise e \n" +
             "    ON s.exercise_id = e.id\n" +
             "JOIN users u on s.users_id = u.id ORDER BY created LIMIT ?";
+    private  static final String USER_SOLUTION_DETAILS_QUERY = "SELECT e.title, s.created, s.id FROM solution s\n" +
+            "JOIN exercise e ON s.exercise_id = e.id\n" +
+            "WHERE s.users_id = ?";
 
     public Solution create(Solution solution) {
         try (Connection conn = DbUtil.getConnection()) {
@@ -177,8 +180,7 @@ public class SolutionDAO {
 
     public String[][] findRecent(int limit) {
         try (Connection conn = DbUtil.getConnection()) {
-            Solution[] solutions = new Solution[0];
-            PreparedStatement statement = conn.prepareStatement(FIND_RECENT);
+            PreparedStatement statement = conn.prepareStatement(FIND_RECENT_QUERY);
             statement.setInt(1, limit);
             ResultSet resultSet = statement.executeQuery();
 
@@ -200,6 +202,27 @@ public class SolutionDAO {
             return null;
         }
 
+    }
+
+    public Set<String[]> findSolutionsByUser(int user_id){
+        try (Connection conn = DbUtil.getConnection()){
+            PreparedStatement statement = conn.prepareStatement(USER_SOLUTION_DETAILS_QUERY);
+            statement.setInt(1, user_id);
+            ResultSet resultSet = statement.executeQuery();
+
+           Set<String[]> result = new HashSet<>();
+            while (resultSet.next()) {
+                String[] singleSolution = new String[3];
+                singleSolution[0]=resultSet.getString("e.title");
+                singleSolution[1]=resultSet.getString("s.created");
+                singleSolution[2]=resultSet.getString("s.id");
+                result.add(singleSolution);
+            }
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

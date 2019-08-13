@@ -12,7 +12,7 @@ public class UserDAO {
             "UPDATE users SET email=?, username=?, password=?, user_group_id=? WHERE id=?";
     private static final String DELETE_USER_QUERY = "DELETE FROM users WHERE id=?";
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM users";
-    private static final String FIND_ALL_BY_GROUP_QUERY= "SELECT * FROM users WHERE group_id=?";
+    private static final String FIND_ALL_BY_GROUP_QUERY= "SELECT * FROM users WHERE user_group_id=?";
 
 
     public User create(User user) {

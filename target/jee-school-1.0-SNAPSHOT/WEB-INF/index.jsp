@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <table cellpadding="1" cellspacing="2" border="1pxsolid">
     <tr>
         <th>Tytuł zadania</th>
@@ -24,12 +25,9 @@
                     <c:param name="solutionId" value="${solution[3]}"/>
                 </c:url>
         <tr>
-<%--            <c:forEach items="${solution}" var="single">--%>
                 <td>${solution[0]}</td>
                 <td>${solution[1]}</td>
                 <td>${solution[2]}</td>
-
-<%--            </c:forEach>--%>
             <td><a href='${loadDetails}'>Pokaż</a></td>
         </tr>
     </c:forEach>
