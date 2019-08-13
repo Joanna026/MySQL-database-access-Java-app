@@ -6,26 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e05d6d10-2539-4b68-824d-07ea16b24848" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowUserData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/allgroups.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/groupusers.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/userdata.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowGroups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/SolutionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/SolutionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/model/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/coderslab/controller/ShowGroups.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/controller/ShowGroups.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/coderslab/model/SolutionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/model/SolutionDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/coderslab/model/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/coderslab/model/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/classes/pl/coderslab/controller/ShowGroups.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/classes/pl/coderslab/controller/ShowGroups.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/classes/pl/coderslab/model/SolutionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/classes/pl/coderslab/model/SolutionDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/classes/pl/coderslab/model/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/classes/pl/coderslab/model/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/jee-school-1.0-SNAPSHOT/WEB-INF/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="e05d6d10-2539-4b68-824d-07ea16b24848" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +93,7 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/model/SolutionDAO.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="287">
-                  <caret line="215" column="65" lean-forward="true" selection-start-line="215" selection-start-column="65" selection-end-line="215" selection-end-column="65" />
+                  <caret line="215" column="65" selection-start-line="215" selection-start-column="65" selection-end-line="215" selection-end-column="65" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#create#0;class#SolutionDAO#0" />
@@ -177,21 +158,21 @@
             <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userdata.jsp">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="553">
-                  <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="16" column="101" selection-start-line="16" selection-start-column="101" selection-end-line="16" selection-end-column="101" />
+                  <caret line="39" selection-start-line="39" selection-end-line="39" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/listslinks.jsp">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
@@ -234,8 +215,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowUserData.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="32" column="101" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="101" />
+                <state relative-caret-position="405">
+                  <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
                 </state>
               </provider>
             </entry>
@@ -293,8 +274,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/userdata.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/model/SolutionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowUserData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/listslinks.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java" />
       </list>
     </option>
   </component>
@@ -607,12 +588,12 @@
       <workItem from="1565354211060" duration="4299000" />
       <workItem from="1565452265842" duration="19624000" />
       <workItem from="1565550451172" duration="14353000" />
-      <workItem from="1565631475929" duration="17365000" />
+      <workItem from="1565631475929" duration="18008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56240000" />
+    <option name="totallyTimeSpent" value="56883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -887,7 +868,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/model/SolutionDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
-          <caret line="215" column="65" lean-forward="true" selection-start-line="215" selection-start-column="65" selection-end-line="215" selection-end-column="65" />
+          <caret line="215" column="65" selection-start-line="215" selection-start-column="65" selection-end-line="215" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#create#0;class#SolutionDAO#0" />
@@ -912,21 +893,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/userdata.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="553">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowUserData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="101" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="101" selection-start-line="16" selection-start-column="101" selection-end-line="16" selection-end-column="101" />
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -934,6 +901,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/ShowUserData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/coderslab/controller/PanelAdmin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
