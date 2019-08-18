@@ -16,6 +16,10 @@ public class Exercise {
     public Exercise() {
     }
 
+    public Exercise(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

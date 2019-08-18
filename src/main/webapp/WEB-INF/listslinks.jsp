@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-
+<p><a href="/exerciselist">Zadania</a> </p>
+<p><a href="/grouplist">Grupy</a> </p>
+<p><a href="/userslist">Użytkownicy</a> </p>
 </body>
 </html>

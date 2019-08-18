@@ -57,7 +57,7 @@ public class ExerciseDAO {
     }
 
 
-    public static void update(Exercise exercise) {
+    public void update(Exercise exercise) {
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_EXERCISE_QUERY);
             statement.setString(1, exercise.getTitle());
@@ -71,7 +71,7 @@ public class ExerciseDAO {
 
     }
 
-    public static void delete(int id) {
+    public void delete(int id) {
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(DELETE_EXERCISE_QUERY);
             statement.setInt(1, id);

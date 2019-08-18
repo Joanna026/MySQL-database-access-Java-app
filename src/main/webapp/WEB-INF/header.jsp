@@ -12,6 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-<a href='<c:url value="/grouplist"/>'>Grupy</a>
+<a href='<c:url value="/showgroups"/>'>Grupy</a>
 </body>
 </html>

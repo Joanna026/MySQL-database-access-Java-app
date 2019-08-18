@@ -943,152 +943,178 @@
     <table id="239" parent="13" name="solution"/>
     <table id="240" parent="13" name="user_group"/>
     <table id="241" parent="13" name="users"/>
-    <column id="242" parent="238" name="id">
+    <table id="242" parent="13" name="users_1"/>
+    <column id="243" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="238" name="title">
+    <column id="244" parent="238" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="238" name="description">
+    <column id="245" parent="238" name="description">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="245" parent="238" name="PRIMARY">
+    <key id="246" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="246" parent="239" name="id">
+    <column id="247" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="239" name="created">
+    <column id="248" parent="239" name="created">
       <Position>2</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="239" name="updated">
+    <column id="249" parent="239" name="updated">
       <Position>3</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="239" name="description">
+    <column id="250" parent="239" name="description">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="239" name="exercise_id">
+    <column id="251" parent="239" name="exercise_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="239" name="users_id">
+    <column id="252" parent="239" name="users_id">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="252" parent="239" name="exercise_id">
+    <index id="253" parent="239" name="exercise_id">
       <ColNames>exercise_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="253" parent="239" name="users_id">
+    <index id="254" parent="239" name="users_id">
       <ColNames>users_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="254" parent="239" name="PRIMARY">
+    <key id="255" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="255" parent="239" name="solution_ibfk_1">
+    <foreign-key id="256" parent="239" name="solution_ibfk_1">
       <ColNames>exercise_id</ColNames>
       <RefSchemaName>programming_school</RefSchemaName>
       <RefTableName>exercise</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="256" parent="239" name="solution_ibfk_2">
+    <foreign-key id="257" parent="239" name="solution_ibfk_2">
       <ColNames>users_id</ColNames>
       <RefSchemaName>programming_school</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="257" parent="240" name="id">
+    <column id="258" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="240" name="name">
+    <column id="259" parent="240" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="259" parent="240" name="PRIMARY">
+    <key id="260" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="260" parent="241" name="id">
+    <column id="261" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="241" name="email">
+    <column id="262" parent="241" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="241" name="username">
+    <column id="263" parent="241" name="username">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="241" name="password">
+    <column id="264" parent="241" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="241" name="user_group_id">
+    <column id="265" parent="241" name="user_group_id">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="265" parent="241" name="email">
+    <index id="266" parent="241" name="email">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="266" parent="241" name="user_group_id">
+    <index id="267" parent="241" name="user_group_id">
       <ColNames>user_group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="267" parent="241" name="PRIMARY">
+    <key id="268" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="268" parent="241" name="email">
+    <key id="269" parent="241" name="email">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
-    <foreign-key id="269" parent="241" name="users_ibfk_1">
+    <foreign-key id="270" parent="241" name="users_ibfk_1">
       <ColNames>user_group_id</ColNames>
       <RefSchemaName>programming_school</RefSchemaName>
       <RefTableName>user_group</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
+    <column id="271" parent="242" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="242" name="email">
+      <Position>2</Position>
+      <DataType>tinytext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="273" parent="242" name="username">
+      <Position>3</Position>
+      <DataType>tinytext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="274" parent="242" name="password">
+      <Position>4</Position>
+      <DataType>tinytext|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="242" name="user_group_id">
+      <Position>5</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
   </database-model>
 </dataSource>
