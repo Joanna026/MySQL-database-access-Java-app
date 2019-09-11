@@ -9,8 +9,10 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <form  action="/groupform" name="groupId"  method="POST" >
     <input type="hidden" name="groupId" value="${groupToEdit.id}">
     <h2>${groupToEdit.id==0 ? "Nowa grupa" : "Edycja grupy"}</h2>

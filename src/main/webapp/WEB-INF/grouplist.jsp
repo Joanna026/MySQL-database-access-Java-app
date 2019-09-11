@@ -10,8 +10,10 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <table cellpadding="1" cellspacing="2" border="1pxsolid">
     <tr>
         <th>Numer id</th>
@@ -33,6 +35,7 @@
     <c:url var="groupAdd" value="/groupform">
         <c:param name="groupId" value="0"/>
     </c:url>
-    <p><a href="${groupAdd}">Dodaj grupę</a></p>
+    <p><a href="${groupAdd}">Dodaj grupę</a> <a href = "/">Powrót do strony głównej</a></p>
+
 </body>
 </html>

@@ -10,8 +10,10 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <h3>Rozwiązanie zadania:</h3>
 <c:out value="${solution.description}" default="Brak rozwiązania" escapeXml="false"/>
 

@@ -10,8 +10,12 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
 <a href='<c:url value="/showgroups"/>'>Grupy</a>
+<a href='<c:url value="/paneladmin"/>'>Zarządzaj</a>
+<br/>
+<br/>
 </body>
 </html>

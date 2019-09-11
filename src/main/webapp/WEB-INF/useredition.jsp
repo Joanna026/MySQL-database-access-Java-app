@@ -10,8 +10,10 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <form action="/usersform" name="userId" method="POST">
     <input type="hidden" name="userId" value="${userToEdit.id}">
     <h2>${userToEdit.id==0 ? "Nowy użytkownik" : "Edycja użytkownika"}</h2>

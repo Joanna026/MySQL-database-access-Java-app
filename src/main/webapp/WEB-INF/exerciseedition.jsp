@@ -9,8 +9,10 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
+<%@ include file="header.jsp"%>
 <form action="/exerciseform" name="exerciseId" method="POST">
     <input type="hidden" name="exerciseId" value="${exerciseToEdit.id}">
     <h2>${exerciseToEdit.id==0 ? "Nowe zadanie" : "Edycja zadania"}</h2>
